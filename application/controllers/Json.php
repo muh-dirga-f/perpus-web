@@ -36,6 +36,7 @@ class Json extends CI_Controller {
     //   productID
     // ORDER BY
     //   SUM(Quantity) DESC
+    
         $data =  $this->db->query('SELECT * FROM log_buku LEFT JOIN buku ON log_buku.id_buku = buku.kode_buku GROUP BY id_buku ORDER BY SUM(id_buku) DESC LIMIT 8')->result_array();
         echo json_encode($data);
     }
